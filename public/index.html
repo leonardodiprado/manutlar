@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ManutLar - Controle de Manutenções</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header>
+            <h1>ManutLar</h1>
+            <p>Controle de manutenções residenciais</p>
+        </header>
+
+        <section class="card">
+            <h2 id="titulo-formulario">Cadastrar manutenção</h2>
+
+            <form id="form-manutencao">
+                <input type="hidden" id="manutencao-id">
+
+                <label for="titulo">Título *</label>
+                <input type="text" id="titulo" maxlength="100" required>
+
+                <label for="local">Local *</label>
+                <input type="text" id="local" maxlength="100" required>
+
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" rows="3"></textarea>
+
+                <label for="status">Status</label>
+                <select id="status">
+                    <option value="Pendente">Pendente</option>
+                    <option value="Em andamento">Em andamento</option>
+                    <option value="Concluída">Concluída</option>
+                </select>
+
+                <label for="data">Data prevista</label>
+                <input type="date" id="data">
+
+                <div class="botoes">
+                    <button type="submit" id="botao-salvar">
+                        Cadastrar manutenção
+                    </button>
+
+                    <button type="button" id="botao-cancelar"
+                            class="secundario" hidden>
+                        Cancelar edição
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Manutenções cadastradas</h2>
+
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Local</th>
+                            <th>Status</th>
+                            <th>Data prevista</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-manutencoes"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
